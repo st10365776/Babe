@@ -28,9 +28,21 @@
             align-items: center;
 
             background:
-                radial-gradient(circle at top left, #ff8fa3, transparent 35%),
-                radial-gradient(circle at bottom right, #7b2cff, transparent 35%),
-                linear-gradient(135deg, #ff4b6e, #8b1e3f);
+                radial-gradient(
+                    circle at top left,
+                    #ff8fa3,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #7b2cff,
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #ff4b6e,
+                    #8b1e3f
+                );
 
             position: relative;
         }
@@ -102,7 +114,10 @@
 
         @keyframes floatUp {
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
                 opacity: 0;
             }
 
@@ -128,7 +143,8 @@
 
             padding: 45px 35px;
 
-            background: rgba(255, 255, 255, 0.95);
+            background:
+                rgba(255, 255, 255, 0.95);
 
             border-radius: 30px;
 
@@ -141,7 +157,8 @@
                 0 25px 70px rgba(0, 0, 0, 0.25),
                 0 0 40px rgba(255, 255, 255, 0.2);
 
-            animation: cardEnter 1s ease forwards;
+            animation:
+                cardEnter 1s ease forwards;
 
             backdrop-filter: blur(10px);
         }
@@ -149,6 +166,7 @@
         @keyframes cardEnter {
             0% {
                 opacity: 0;
+
                 transform:
                     translateY(50px)
                     scale(0.8);
@@ -156,6 +174,7 @@
 
             100% {
                 opacity: 1;
+
                 transform:
                     translateY(0)
                     scale(1);
@@ -188,9 +207,11 @@
             margin-bottom: 15px;
 
             box-shadow:
-                0 5px 15px rgba(229, 9, 47, 0.3);
+                0 5px 15px
+                rgba(229, 9, 47, 0.3);
 
-            animation: pulseBadge 2s infinite;
+            animation:
+                pulseBadge 2s infinite;
         }
 
         @keyframes pulseBadge {
@@ -204,7 +225,7 @@
         }
 
         /* =========================
-           HEART ICON
+           MAIN HEART
         ========================= */
 
         .main-heart {
@@ -245,7 +266,12 @@
         h1 {
             margin: 10px 0;
 
-            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            font-size:
+                clamp(
+                    1.8rem,
+                    6vw,
+                    2.5rem
+                );
 
             background:
                 linear-gradient(
@@ -335,7 +361,8 @@
             color: white;
 
             box-shadow:
-                0 8px 25px rgba(229, 9, 47, 0.4);
+                0 8px 25px
+                rgba(229, 9, 47, 0.4);
 
             position: relative;
 
@@ -346,7 +373,8 @@
             transform: scale(1.08);
 
             box-shadow:
-                0 12px 35px rgba(229, 9, 47, 0.55);
+                0 12px 35px
+                rgba(229, 9, 47, 0.55);
         }
 
         /* =========================
@@ -359,7 +387,8 @@
             color: white;
 
             box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.2);
+                0 5px 15px
+                rgba(0, 0, 0, 0.2);
 
             position: relative;
 
@@ -371,7 +400,7 @@
         }
 
         /* =========================
-           MESSAGE
+           REACTION MESSAGE
         ========================= */
 
         #reaction {
@@ -400,16 +429,21 @@
 
         @keyframes successPop {
             0% {
-                transform: scale(0.5);
+                transform:
+                    scale(0.5);
+
                 opacity: 0;
             }
 
             70% {
-                transform: scale(1.1);
+                transform:
+                    scale(1.1);
             }
 
             100% {
-                transform: scale(1);
+                transform:
+                    scale(1);
+
                 opacity: 1;
             }
         }
@@ -490,8 +524,23 @@
 
 <body>
 
-    <!-- Floating background hearts -->
+    <!-- =========================
+         YES CLICK SOUND
+    ========================= -->
+
+    <audio id="yesSound" preload="auto">
+        <source
+            src="yes-sound.mp3"
+            type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================
+         FLOATING HEARTS
+    ========================= -->
+
     <div class="hearts">
+
         <div class="heart">❤️</div>
         <div class="heart">💕</div>
         <div class="heart">💗</div>
@@ -499,52 +548,77 @@
         <div class="heart">💖</div>
         <div class="heart">💕</div>
         <div class="heart">❤️</div>
+
     </div>
 
 
-    <!-- Main card -->
-    <div class="container" id="card">
+    <!-- =========================
+         MAIN CARD
+    ========================= -->
+
+    <div
+        class="container"
+        id="card">
 
         <div class="spiderman">
             🕷️ SPIDER-MAN DATE PROPOSAL 🕷️
         </div>
 
+
         <div class="main-heart">
             ❤️
         </div>
+
 
         <h1 id="questionText">
             Hey Beautiful... 🥰
         </h1>
 
+
         <p id="subText">
+
             Do you wanna go watch
             <strong>Spider-Man</strong>
             next Saturday,
             with your
+
             <span class="boyfriend">
                 most handsome boyfriend?
                 ETHAN GRUNEWALD!!!!
             </span>
+
             ❤️
+
         </p>
 
 
-        <div class="buttons" id="btnContainer">
+        <!-- =========================
+             BUTTONS
+        ========================= -->
+
+        <div
+            class="buttons"
+            id="btnContainer">
 
             <button
                 id="yesBtn"
                 onclick="selectYes()">
+
                 YES! 🥰❤️
+
             </button>
+
 
             <button
                 id="noBtn"
                 onclick="handleNo()">
+
                 No 😢
+
             </button>
 
         </div>
+
 
         <div id="reaction"></div>
 
@@ -553,6 +627,10 @@
 
     <script>
 
+        /* =========================
+           ELEMENTS
+        ========================= */
+
         const yesBtn =
             document.getElementById("yesBtn");
 
@@ -560,20 +638,39 @@
             document.getElementById("noBtn");
 
         const questionText =
-            document.getElementById("questionText");
+            document.getElementById(
+                "questionText"
+            );
 
         const subText =
-            document.getElementById("subText");
+            document.getElementById(
+                "subText"
+            );
 
         const reaction =
-            document.getElementById("reaction");
+            document.getElementById(
+                "reaction"
+            );
 
         const btnContainer =
-            document.getElementById("btnContainer");
+            document.getElementById(
+                "btnContainer"
+            );
 
         const card =
-            document.getElementById("card");
+            document.getElementById(
+                "card"
+            );
 
+        const yesSound =
+            document.getElementById(
+                "yesSound"
+            );
+
+
+        /* =========================
+           VARIABLES
+        ========================= */
 
         let noClicks = 0;
 
@@ -582,10 +679,9 @@
         let noScale = 1;
 
 
-        /*
-        Messages that appear
-        when she presses No
-        */
+        /* =========================
+           NO BUTTON MESSAGES
+        ========================= */
 
         const messages = [
 
@@ -614,13 +710,18 @@
         ];
 
 
+        /* =========================
+           HANDLE NO
+        ========================= */
+
         function handleNo() {
 
             noClicks++;
 
+
             /*
-            Make YES bigger
-            */
+             * Make YES bigger
+             */
 
             yesScale += 0.15;
 
@@ -629,8 +730,8 @@
 
 
             /*
-            Make NO smaller
-            */
+             * Make NO smaller
+             */
 
             noScale -= 0.08;
 
@@ -643,8 +744,8 @@
 
 
             /*
-            Change message
-            */
+             * Change message
+             */
 
             const messageIndex =
                 Math.min(
@@ -657,18 +758,15 @@
 
 
             /*
-            Make the NO button
-            move around
-            */
+             * Move NO button
+             */
 
             moveNoButton();
 
 
             /*
-            If they've clicked No
-            many times, make YES
-            extra tempting
-            */
+             * Change YES text
+             */
 
             if (noClicks >= 6) {
 
@@ -684,9 +782,10 @@
 
             }
 
+
             /*
-            Shake the card slightly
-            */
+             * Shake card
+             */
 
             card.animate(
                 [
@@ -717,14 +816,14 @@
         }
 
 
+        /* =========================
+           MOVE NO BUTTON
+        ========================= */
+
         function moveNoButton() {
 
-            /*
-            Once the button gets small,
-            let it escape anywhere on screen.
-            */
-
             const padding = 20;
+
 
             const buttonWidth =
                 noBtn.offsetWidth;
@@ -750,6 +849,7 @@
                     Math.random() * maxX
                 );
 
+
             const randomY =
                 Math.max(
                     padding,
@@ -757,74 +857,109 @@
                 );
 
 
-            noBtn.style.position = "fixed";
+            noBtn.style.position =
+                "fixed";
+
 
             noBtn.style.left =
                 randomX + "px";
+
 
             noBtn.style.top =
                 randomY + "px";
         }
 
 
-        /*
-        YES BUTTON
-        */
+        /* =========================
+           YES BUTTON
+        ========================= */
 
         function selectYes() {
 
             /*
-            Change the main text
-            */
+             * PLAY SOUND
+             */
+
+            yesSound.currentTime = 0;
+
+            yesSound.play().catch(
+                error => {
+                    console.log(
+                        "Sound could not play:",
+                        error
+                    );
+                }
+            );
+
+
+            /*
+             * Change main heading
+             */
 
             questionText.innerText =
                 "YAYYYYY!!! 🥰❤️";
 
 
-            subText.innerHTML =
-                `
+            /*
+             * Change message
+             */
+
+            subText.innerHTML = `
+
                 I KNEW you'd say yes! 😌❤️
+
                 <br><br>
+
                 Spider-Man + popcorn + you + me.
+
                 <br>
-                Sounds like the perfect Saturday to me. 🕷️🍿
+
+                Sounds like the perfect
+                Saturday to me. 🕷️🍿
+
                 <br><br>
+
                 <strong>
                     Date officially accepted! ❤️
                 </strong>
-                `;
+
+            `;
 
 
             /*
-            Hide buttons
-            */
+             * Hide buttons
+             */
 
             btnContainer.style.display =
                 "none";
+
 
             reaction.style.display =
                 "none";
 
 
             /*
-            Change heart
-            */
+             * Change heart
+             */
 
             document.querySelector(
                 ".main-heart"
-            ).innerText = "💖";
+            ).innerText =
+                "💖";
 
 
             /*
-            Success animation
-            */
+             * Success animation
+             */
 
-            card.classList.add("success");
+            card.classList.add(
+                "success"
+            );
 
 
             /*
-            Create celebration
-            */
+             * Celebration
+             */
 
             createConfetti();
 
@@ -833,13 +968,14 @@
         }
 
 
-        /*
-        CONFETTI
-        */
+        /* =========================
+           CONFETTI
+        ========================= */
 
         function createConfetti() {
 
             const symbols = [
+
                 "❤️",
                 "💕",
                 "💖",
@@ -847,17 +983,26 @@
                 "🎉",
                 "🕷️",
                 "🍿"
+
             ];
 
 
-            for (let i = 0; i < 70; i++) {
+            for (
+                let i = 0;
+                i < 70;
+                i++
+            ) {
 
                 const piece =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
+
 
                 piece.classList.add(
                     "confetti"
                 );
+
 
                 piece.innerText =
                     symbols[
@@ -869,25 +1014,40 @@
 
 
                 piece.style.left =
-                    Math.random() * 100 + "vw";
+                    Math.random() *
+                    100 +
+                    "vw";
 
 
                 piece.style.fontSize =
-                    (Math.random() * 15 + 10)
-                    + "px";
+                    (
+                        Math.random() *
+                        15 +
+                        10
+                    ) +
+                    "px";
 
 
                 piece.style.animationDuration =
-                    (Math.random() * 2 + 2)
-                    + "s";
+                    (
+                        Math.random() *
+                        2 +
+                        2
+                    ) +
+                    "s";
 
 
                 piece.style.animationDelay =
-                    (Math.random() * 0.8)
-                    + "s";
+                    (
+                        Math.random() *
+                        0.8
+                    ) +
+                    "s";
 
 
-                document.body.appendChild(piece);
+                document.body.appendChild(
+                    piece
+                );
 
 
                 setTimeout(() => {
@@ -895,29 +1055,39 @@
                     piece.remove();
 
                 }, 4000);
+
             }
         }
 
 
-        /*
-        HEART EXPLOSION
-        */
+        /* =========================
+           HEART EXPLOSION
+        ========================= */
 
         function createHeartExplosion() {
 
             const hearts = [
+
                 "❤️",
                 "💕",
                 "💗",
                 "💖",
                 "💘"
+
             ];
 
 
-            for (let i = 0; i < 25; i++) {
+            for (
+                let i = 0;
+                i < 25;
+                i++
+            ) {
 
                 const heart =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
+
 
                 heart.innerText =
                     hearts[
@@ -960,7 +1130,9 @@
 
 
                 const distance =
-                    Math.random() * 300 + 100;
+                    Math.random() *
+                    300 +
+                    100;
 
 
                 const x =
@@ -974,14 +1146,18 @@
 
 
                 heart.animate(
+
                     [
+
                         {
                             transform:
                                 "translate(-50%, -50%) scale(0)",
+
                             opacity: 1
                         },
 
                         {
+
                             transform:
                                 `translate(
                                     calc(-50% + ${x}px),
@@ -991,15 +1167,21 @@
 
                             opacity: 0
                         }
+
                     ],
+
                     {
+
                         duration:
                             1500 +
-                            Math.random() * 1000,
+                            Math.random() *
+                            1000,
 
                         easing:
                             "cubic-bezier(.17,.67,.35,1)"
+
                     }
+
                 );
 
 
@@ -1008,6 +1190,7 @@
                     heart.remove();
 
                 }, 3000);
+
             }
         }
 
