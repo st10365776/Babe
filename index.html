@@ -7,6 +7,7 @@
     <title>A Very Important Question ❤️</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -47,9 +48,10 @@
             position: relative;
         }
 
-        /* =========================
-           FLOATING HEARTS
-        ========================= */
+
+        /* =========================================
+           FLOATING BACKGROUND HEARTS
+        ========================================= */
 
         .hearts {
             position: absolute;
@@ -113,6 +115,7 @@
         }
 
         @keyframes floatUp {
+
             0% {
                 transform:
                     translateY(0)
@@ -134,12 +137,17 @@
             }
         }
 
-        /* =========================
+
+        /* =========================================
            MAIN CARD
-        ========================= */
+        ========================================= */
 
         .container {
+
             width: min(92%, 520px);
+
+            max-height: 94vh;
+            overflow-y: auto;
 
             padding: 45px 35px;
 
@@ -151,6 +159,7 @@
             text-align: center;
 
             position: relative;
+
             z-index: 5;
 
             box-shadow:
@@ -161,9 +170,16 @@
                 cardEnter 1s ease forwards;
 
             backdrop-filter: blur(10px);
+
+            scrollbar-width: none;
+        }
+
+        .container::-webkit-scrollbar {
+            display: none;
         }
 
         @keyframes cardEnter {
+
             0% {
                 opacity: 0;
 
@@ -181,11 +197,13 @@
             }
         }
 
-        /* =========================
+
+        /* =========================================
            SPIDER-MAN BADGE
-        ========================= */
+        ========================================= */
 
         .spiderman {
+
             display: inline-block;
 
             background:
@@ -202,6 +220,7 @@
             border-radius: 30px;
 
             font-size: 0.85rem;
+
             font-weight: bold;
 
             margin-bottom: 15px;
@@ -215,6 +234,7 @@
         }
 
         @keyframes pulseBadge {
+
             0%, 100% {
                 transform: scale(1);
             }
@@ -224,11 +244,13 @@
             }
         }
 
-        /* =========================
+
+        /* =========================================
            MAIN HEART
-        ========================= */
+        ========================================= */
 
         .main-heart {
+
             font-size: 65px;
 
             animation:
@@ -238,6 +260,7 @@
         }
 
         @keyframes heartbeat {
+
             0%, 100% {
                 transform: scale(1);
             }
@@ -259,11 +282,13 @@
             }
         }
 
-        /* =========================
+
+        /* =========================================
            TEXT
-        ========================= */
+        ========================================= */
 
         h1 {
+
             margin: 10px 0;
 
             font-size:
@@ -289,6 +314,7 @@
         }
 
         p {
+
             color: #666;
 
             font-size: 1.1rem;
@@ -302,18 +328,23 @@
         }
 
         .boyfriend {
+
             color: #e5092f;
+
             font-weight: bold;
         }
 
-        /* =========================
-           BUTTON AREA
-        ========================= */
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
 
         .buttons {
+
             display: flex;
 
             justify-content: center;
+
             align-items: center;
 
             gap: 20px;
@@ -324,6 +355,7 @@
         }
 
         button {
+
             border: none;
 
             border-radius: 50px;
@@ -346,11 +378,13 @@
             user-select: none;
         }
 
-        /* =========================
+
+        /* =========================================
            YES BUTTON
-        ========================= */
+        ========================================= */
 
         #yesBtn {
+
             background:
                 linear-gradient(
                     135deg,
@@ -370,6 +404,7 @@
         }
 
         #yesBtn:hover {
+
             transform: scale(1.08);
 
             box-shadow:
@@ -377,11 +412,13 @@
                 rgba(229, 9, 47, 0.55);
         }
 
-        /* =========================
+
+        /* =========================================
            NO BUTTON
-        ========================= */
+        ========================================= */
 
         #noBtn {
+
             background: #777;
 
             color: white;
@@ -396,14 +433,17 @@
         }
 
         #noBtn:hover {
+
             background: #666;
         }
 
-        /* =========================
-           REACTION MESSAGE
-        ========================= */
+
+        /* =========================================
+           REACTION
+        ========================================= */
 
         #reaction {
+
             min-height: 25px;
 
             margin-top: 15px;
@@ -418,17 +458,21 @@
                 opacity 0.3s ease;
         }
 
-        /* =========================
+
+        /* =========================================
            SUCCESS SCREEN
-        ========================= */
+        ========================================= */
 
         .success {
+
             animation:
                 successPop 0.8s ease forwards;
         }
 
         @keyframes successPop {
+
             0% {
+
                 transform:
                     scale(0.5);
 
@@ -436,11 +480,13 @@
             }
 
             70% {
+
                 transform:
-                    scale(1.1);
+                    scale(1.08);
             }
 
             100% {
+
                 transform:
                     scale(1);
 
@@ -449,18 +495,276 @@
         }
 
         .success h1 {
+
             font-size: 3rem;
+
+            margin-bottom: 8px;
         }
 
-        .success-text {
-            font-size: 1.2rem;
+
+        /* =========================================
+           ETHAN PHOTO
+        ========================================= */
+
+        .photo-section {
+
+            position: relative;
+
+            width: 230px;
+            height: 230px;
+
+            margin:
+                20px auto 25px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
         }
 
-        /* =========================
+
+        .photo-glow {
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff1744,
+                    #ff8fa3,
+                    #7b2cff
+                );
+
+            filter: blur(18px);
+
+            opacity: 0.65;
+
+            animation:
+                photoGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes photoGlow {
+
+            0%, 100% {
+                transform: scale(0.95);
+                opacity: 0.55;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 0.85;
+            }
+        }
+
+
+        .photo-frame {
+
+            width: 190px;
+            height: 190px;
+
+            padding: 6px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff1744,
+                    #7b2cff
+                );
+
+            position: relative;
+
+            z-index: 2;
+
+            box-shadow:
+                0 15px 45px
+                rgba(229, 9, 47, 0.35);
+
+            animation:
+                photoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes photoFloat {
+
+            0%, 100% {
+                transform:
+                    translateY(0)
+                    rotate(-2deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-8px)
+                    rotate(2deg);
+            }
+        }
+
+
+        .photo-frame img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+
+            border: 5px solid white;
+        }
+
+
+        /* =========================================
+           PHOTO HEARTS
+        ========================================= */
+
+        .photo-heart {
+
+            position: absolute;
+
+            z-index: 5;
+
+            font-size: 30px;
+
+            animation:
+                miniHeartFloat 2s ease-in-out infinite;
+        }
+
+        .photo-heart.one {
+
+            top: 5px;
+            right: 15px;
+
+            animation-delay: 0s;
+        }
+
+        .photo-heart.two {
+
+            bottom: 20px;
+            left: 5px;
+
+            font-size: 25px;
+
+            animation-delay: 0.5s;
+        }
+
+        .photo-heart.three {
+
+            top: 65px;
+            left: -5px;
+
+            font-size: 20px;
+
+            animation-delay: 1s;
+        }
+
+        @keyframes miniHeartFloat {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+                opacity: 0.8;
+            }
+
+            50% {
+
+                transform:
+                    translateY(-10px)
+                    scale(1.15);
+
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================================
+           FAVOURITE PERSON BADGE
+        ========================================= */
+
+        .favorite-badge {
+
+            display: inline-block;
+
+            margin-top: -8px;
+
+            padding:
+                8px 16px;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f3,
+                    #f4eaff
+                );
+
+            color: #e5092f;
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 6px 20px
+                rgba(229, 9, 47, 0.12);
+
+            animation:
+                badgeAppear 1s ease 0.5s both;
+        }
+
+        @keyframes badgeAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================================
+           SUCCESS MESSAGE
+        ========================================= */
+
+        .success-message {
+
+            font-size: 1.1rem;
+
+            color: #666;
+
+            line-height: 1.6;
+
+            margin-top: 15px;
+        }
+
+        .success-message strong {
+
+            color: #e5092f;
+        }
+
+
+        /* =========================================
            CONFETTI
-        ========================= */
+        ========================================= */
 
         .confetti {
+
             position: fixed;
 
             width: 10px;
@@ -475,7 +779,9 @@
         }
 
         @keyframes confettiFall {
+
             0% {
+
                 transform:
                     translateY(0)
                     rotate(0deg);
@@ -484,6 +790,7 @@
             }
 
             100% {
+
                 transform:
                     translateY(110vh)
                     rotate(720deg);
@@ -492,52 +799,95 @@
             }
         }
 
-        /* =========================
+
+        /* =========================================
            MOBILE
-        ========================= */
+        ========================================= */
 
         @media (max-width: 500px) {
 
             .container {
-                padding: 35px 22px;
+
+                padding:
+                    30px 20px;
+
+                width: 94%;
             }
 
             .main-heart {
+
                 font-size: 55px;
             }
 
             p {
+
                 font-size: 1rem;
             }
 
             button {
-                padding: 12px 22px;
-                font-size: 0.95rem;
+
+                padding:
+                    12px 22px;
+
+                font-size:
+                    0.95rem;
             }
 
             .buttons {
+
                 gap: 12px;
             }
+
+            .photo-section {
+
+                width: 200px;
+                height: 200px;
+            }
+
+            .photo-glow {
+
+                width: 190px;
+                height: 190px;
+            }
+
+            .photo-frame {
+
+                width: 165px;
+                height: 165px;
+            }
+
+            .success h1 {
+
+                font-size:
+                    2.5rem;
+            }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- =========================
-         YES CLICK SOUND
-    ========================= -->
 
-    <audio id="yesSound" preload="auto">
+    <!-- =========================================
+         YES CLICK SOUND
+    ========================================= -->
+
+    <audio
+        id="yesSound"
+        preload="auto">
+
         <source
             src="yes-sound.mp3"
             type="audio/mpeg">
+
     </audio>
 
 
-    <!-- =========================
+    <!-- =========================================
          FLOATING HEARTS
-    ========================= -->
+    ========================================= -->
 
     <div class="hearts">
 
@@ -552,39 +902,53 @@
     </div>
 
 
-    <!-- =========================
+    <!-- =========================================
          MAIN CARD
-    ========================= -->
+    ========================================= -->
 
     <div
         class="container"
         id="card">
 
+
         <div class="spiderman">
+
             🕷️ SPIDER-MAN DATE PROPOSAL 🕷️
+
         </div>
 
 
         <div class="main-heart">
+
             ❤️
+
         </div>
 
 
         <h1 id="questionText">
+
             Hey Beautiful... 🥰
+
         </h1>
 
 
         <p id="subText">
 
             Do you wanna go watch
-            <strong>Spider-Man</strong>
+
+            <strong>
+                Spider-Man
+            </strong>
+
             next Saturday,
+
             with your
 
             <span class="boyfriend">
+
                 most handsome boyfriend?
                 ETHAN GRUNEWALD!!!!
+
             </span>
 
             ❤️
@@ -592,13 +956,14 @@
         </p>
 
 
-        <!-- =========================
+        <!-- =====================================
              BUTTONS
-        ========================= -->
+        ====================================== -->
 
         <div
             class="buttons"
             id="btnContainer">
+
 
             <button
                 id="yesBtn"
@@ -617,25 +982,32 @@
 
             </button>
 
+
         </div>
 
 
         <div id="reaction"></div>
+
 
     </div>
 
 
     <script>
 
-        /* =========================
+
+        /* =========================================
            ELEMENTS
-        ========================= */
+        ========================================= */
 
         const yesBtn =
-            document.getElementById("yesBtn");
+            document.getElementById(
+                "yesBtn"
+            );
 
         const noBtn =
-            document.getElementById("noBtn");
+            document.getElementById(
+                "noBtn"
+            );
 
         const questionText =
             document.getElementById(
@@ -668,9 +1040,9 @@
             );
 
 
-        /* =========================
+        /* =========================================
            VARIABLES
-        ========================= */
+        ========================================= */
 
         let noClicks = 0;
 
@@ -679,9 +1051,9 @@
         let noScale = 1;
 
 
-        /* =========================
-           NO BUTTON MESSAGES
-        ========================= */
+        /* =========================================
+           NO MESSAGES
+        ========================================= */
 
         const messages = [
 
@@ -710,18 +1082,16 @@
         ];
 
 
-        /* =========================
+        /* =========================================
            HANDLE NO
-        ========================= */
+        ========================================= */
 
         function handleNo() {
 
             noClicks++;
 
 
-            /*
-             * Make YES bigger
-             */
+            /* Make YES bigger */
 
             yesScale += 0.15;
 
@@ -729,23 +1099,21 @@
                 `scale(${yesScale})`;
 
 
-            /*
-             * Make NO smaller
-             */
+            /* Make NO smaller */
 
             noScale -= 0.08;
 
             if (noScale < 0.35) {
+
                 noScale = 0.35;
+
             }
 
             noBtn.style.transform =
                 `scale(${noScale})`;
 
 
-            /*
-             * Change message
-             */
+            /* Change message */
 
             const messageIndex =
                 Math.min(
@@ -754,19 +1122,17 @@
                 );
 
             reaction.innerText =
-                messages[messageIndex];
+                messages[
+                    messageIndex
+                ];
 
 
-            /*
-             * Move NO button
-             */
+            /* Move NO button */
 
             moveNoButton();
 
 
-            /*
-             * Change YES text
-             */
+            /* Change YES text */
 
             if (noClicks >= 6) {
 
@@ -783,12 +1149,12 @@
             }
 
 
-            /*
-             * Shake card
-             */
+            /* Shake card */
 
             card.animate(
+
                 [
+
                     {
                         transform:
                             "translateX(-4px)"
@@ -808,22 +1174,25 @@
                         transform:
                             "translateX(0)"
                     }
+
                 ],
+
                 {
                     duration: 300
                 }
+
             );
+
         }
 
 
-        /* =========================
+        /* =========================================
            MOVE NO BUTTON
-        ========================= */
+        ========================================= */
 
         function moveNoButton() {
 
             const padding = 20;
-
 
             const buttonWidth =
                 noBtn.offsetWidth;
@@ -849,7 +1218,6 @@
                     Math.random() * maxX
                 );
 
-
             const randomY =
                 Math.max(
                     padding,
@@ -860,87 +1228,51 @@
             noBtn.style.position =
                 "fixed";
 
-
             noBtn.style.left =
                 randomX + "px";
 
-
             noBtn.style.top =
                 randomY + "px";
+
         }
 
 
-        /* =========================
+        /* =========================================
            YES BUTTON
-        ========================= */
+        ========================================= */
 
         function selectYes() {
 
-            /*
-             * PLAY SOUND
-             */
+
+            /* =====================================
+               PLAY SOUND
+            ===================================== */
 
             yesSound.currentTime = 0;
 
             yesSound.play().catch(
                 error => {
+
                     console.log(
                         "Sound could not play:",
                         error
                     );
+
                 }
             );
 
 
-            /*
-             * Change main heading
-             */
+            /* =====================================
+               CHANGE HEADING
+            ===================================== */
 
             questionText.innerText =
                 "YAYYYYY!!! 🥰❤️";
 
 
-            /*
-             * Change message
-             */
-
-            subText.innerHTML = `
-
-                I KNEW you'd say yes! 😌❤️
-
-                <br><br>
-
-                Spider-Man + popcorn + you + me.
-
-                <br>
-
-                Sounds like the perfect
-                Saturday to me. 🕷️🍿
-
-                <br><br>
-
-                <strong>
-                    Date officially accepted! ❤️
-                </strong>
-
-            `;
-
-
-            /*
-             * Hide buttons
-             */
-
-            btnContainer.style.display =
-                "none";
-
-
-            reaction.style.display =
-                "none";
-
-
-            /*
-             * Change heart
-             */
+            /* =====================================
+               CHANGE HEART
+            ===================================== */
 
             document.querySelector(
                 ".main-heart"
@@ -948,18 +1280,99 @@
                 "💖";
 
 
-            /*
-             * Success animation
-             */
+            /* =====================================
+               REPLACE MESSAGE WITH PHOTO
+            ===================================== */
+
+            subText.innerHTML = `
+
+                <div class="photo-section">
+
+                    <div class="photo-glow"></div>
+
+                    <div class="photo-frame">
+
+                        <img
+                            src="ethan.jpeg"
+                            alt="Ethan ❤️"
+                        >
+
+                    </div>
+
+
+                    <div class="photo-heart one">
+                        ❤️
+                    </div>
+
+                    <div class="photo-heart two">
+                        💕
+                    </div>
+
+                    <div class="photo-heart three">
+                        💖
+                    </div>
+
+                </div>
+
+
+                <div class="favorite-badge">
+
+                    ❤️ Her Favourite Person ❤️
+
+                </div>
+
+
+                <div class="success-message">
+
+                    I KNEW you'd say yes! 😌❤️
+
+                    <br><br>
+
+                    Spider-Man + popcorn
+                    + you + me.
+
+                    <br>
+
+                    Sounds like the
+                    <strong>
+                        perfect Saturday
+                    </strong>
+                    to me. 🕷️🍿
+
+                    <br><br>
+
+                    <strong>
+                        Date officially accepted! ❤️
+                    </strong>
+
+                </div>
+
+            `;
+
+
+            /* =====================================
+               HIDE BUTTONS
+            ===================================== */
+
+            btnContainer.style.display =
+                "none";
+
+            reaction.style.display =
+                "none";
+
+
+            /* =====================================
+               SUCCESS ANIMATION
+            ===================================== */
 
             card.classList.add(
                 "success"
             );
 
 
-            /*
-             * Celebration
-             */
+            /* =====================================
+               CELEBRATION
+            ===================================== */
 
             createConfetti();
 
@@ -968,9 +1381,9 @@
         }
 
 
-        /* =========================
+        /* =========================================
            CONFETTI
-        ========================= */
+        ========================================= */
 
         function createConfetti() {
 
@@ -1057,12 +1470,13 @@
                 }, 4000);
 
             }
+
         }
 
 
-        /* =========================
+        /* =========================================
            HEART EXPLOSION
-        ========================= */
+        ========================================= */
 
         function createHeartExplosion() {
 
@@ -1101,18 +1515,14 @@
                 heart.style.position =
                     "fixed";
 
-
                 heart.style.left =
                     "50%";
-
 
                 heart.style.top =
                     "50%";
 
-
                 heart.style.fontSize =
                     "25px";
-
 
                 heart.style.zIndex =
                     "200";
@@ -1166,6 +1576,7 @@
                                 scale(1.5)`,
 
                             opacity: 0
+
                         }
 
                     ],
@@ -1189,9 +1600,10 @@
 
                     heart.remove();
 
-                }, 3001);
+                }, 3000);
 
             }
+
         }
 
     </script>
